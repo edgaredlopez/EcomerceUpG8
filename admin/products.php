@@ -19,12 +19,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de productos
+        Listado de Productos
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i> Casa</a></li>
         <li>Productos</li>
-        <li class="active">Lista de productos</li>
+        <li class="active">Listado de productos</li>
       </ol>
     </section>
 
@@ -56,11 +56,11 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> Nuevo</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i>Crear nuevo producto</a>
               <div class="pull-right">
                 <form class="form-inline">
                   <div class="form-group">
-                    <label>Categoria: </label>
+                    <label>Categoria de productos: </label>
                     <select class="form-control input-sm" id="select_category">
                       <option value="0">Todos</option>
                       <?php
@@ -86,12 +86,12 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Nombre</th>
-                  <th>Foto</th>
-                  <th>Descripción</th>
-                  <th>Precio</th>
-                  <th>Vistas hoy</th>
-                  <th>Herramientas</th>
+                  <th>Nombre del producto</th>
+                  <th>Foto del producto</th>
+                  <th>Descripción del producto</th>
+                  <th>Precio del producto</th>
+                  <th>Vistas de hoy</th>
+                  <th>Funciones</th>
                 </thead>
                 <tbody>
                   <?php

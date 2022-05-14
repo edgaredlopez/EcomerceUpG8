@@ -60,6 +60,7 @@
         <div class="col-lg-3 col-xs-6">
           <!-- caja pequeña -->
           <div class="small-box bg-aqua">
+          <!-- <div class="small-box" style="background-color: #d6d31a;"> -->
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN products ON products.id=details.product_id");
@@ -71,20 +72,21 @@
                   $total += $subtotal;
                 }
 
-                echo "<h3>&#36; ".number_format_short($total, 2)."</h3>";
+                echo "<h3>&#81; ".number_format_short($total, 2)."</h3>";
               ?>
-              <p>Ventas totales</p>
+              <p>Total de ventas</p>
             </div>
             <div class="icon">
-              <i class="fa fa-shopping-cart"></i>
+              <!-- <i class="fa fa-shopping-cart"></i> -->
             </div>
-            <a href="#" class="small-box-footer">Mas informaciòn <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Ver todo <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
+          <!-- <div class="small-box" style="background-color: #1dd61a;"> -->
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM products");
@@ -94,18 +96,19 @@
                 echo "<h3>".$prow['numrows']."</h3>";
               ?>
           
-              <p>Número de productos</p>
+              <p>Cantidad de productos</p>
             </div>
             <div class="icon">
-              <i class="fa fa-barcode"></i>
+              <!-- <i class="fa fa-barcode"></i> -->
             </div>
-            <a href="products.php" class="small-box-footer">Mas informaciòn <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="products.php" class="small-box-footer">Ver todo <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-yellow">
+          <!-- <div class="small-box" style="background-color:  ;"> -->
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users");
@@ -115,18 +118,19 @@
                 echo "<h3>".$urow['numrows']."</h3>";
               ?>
              
-              <p>Número de usuarios</p>
+              <p>Cantidad de usuarios registrados</p>
             </div>
             <div class="icon">
-              <i class="fa fa-users"></i>
+              <!-- <i class="fa fa-users"></i> -->
             </div>
-            <a href="users.php" class="small-box-footer">Mas informaciòn <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="users.php" class="small-box-footer">Ver todo <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
+          <!-- <div class="small-box" style="background-color: #bc1ad6;"> -->
             <div class="inner">
               <?php
                 $stmt = $conn->prepare("SELECT * FROM details LEFT JOIN sales ON sales.id=details.sales_id LEFT JOIN products ON products.id=details.product_id WHERE sales_date=:sales_date");
@@ -138,22 +142,22 @@
                   $total += $subtotal;
                 }
 
-                echo "<h3>&#36; ".number_format_short($total, 2)."</h3>";
+                echo "<h3>&#81; ".number_format_short($total, 2)."</h3>";
                 
               ?>
 
-              <p>Ventas hoy</p>
+              <p>Ventas del día</p>
             </div>
             <div class="icon">
-              <i class="fa fa-money"></i>
+              <!-- <i class="fa fa-money"></i> -->
             </div>
-            <a href="sales.php" class="small-box-footer">Mas informaciòn <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="sales.php" class="small-box-footer">Ver todo <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
       </div>
       <!-- /.row -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
@@ -185,7 +189,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       </section>
       <!-- columna derecha -->

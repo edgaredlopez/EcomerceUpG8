@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Usuarios
+        Usuarios Ingresados
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i> Casa</a></li>
@@ -47,17 +47,17 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Crear nuevo usuario</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Foto</th>
+                  <th>Foto del usuario</th>
                   <th>Correo electrónico</th>
-                  <th>Nombre</th>
-                  <th>Estado</th>
-                  <th>Fecha Agregada</th>
-                  <th>Herramientas</th>
+                  <th>Nombre de usuario</th>
+                  <th>Estado del usuario</th>
+                  <th>Fecha Agregado/a</th>
+                  <th>Funciones</th>
                 </thead>
                 <tbody>
                   <?php

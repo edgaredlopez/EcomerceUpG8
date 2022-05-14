@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Categoria
+        Categorias
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i> Casa</a></li>
         <li><a href="products.php"><i class="fa fa-dashboard"></i> Productos</a></li>
-        <li class="active">Categoria</li>
+        <li class="active">Categorias</li>
       </ol>
     </section>
 
@@ -48,13 +48,13 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i>Crear nueva categoría</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th>Nombre de la categoría</th>
-                  <th>Herramientas</th>
+                  <th>Funciones</th>
                 </thead>
                 <tbody>
                   <?php

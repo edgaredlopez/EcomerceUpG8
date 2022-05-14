@@ -3,5 +3,5 @@
       <b>Todos los derechos reservados</b>
     </div>
    
-    <strong>Copyright &copy; 2021 <a href="https://www.facebook.com/profile.php?id=100010116841282/">Configuraciòn-programador-Alex-Yosdado</a></strong>
+    <strong>Grupo 8 exports S.A. &copy; 2022</strong>
 </footer>

@@ -10,7 +10,7 @@
     <!-- Encabezado de contenido (encabezado de página) -->
     <section class="content-header">
       <h1>
-        Historial de ventas
+        Historial de ventas totales
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i> Casa</a></li>
@@ -32,7 +32,7 @@
                     </div>
                     <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range">
                   </div>
-                  <button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> Impresión</button>
+                  <button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> Imprimir</button>
                 </form>
               </div>
             </div>
@@ -40,11 +40,11 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Fecha</th>
-                  <th>Nombre del comprador</th>
-                  <th>Transacción#</th>
-                  <th>Cantidad</th>
-                  <th>Detalles completos</th>
+                  <th>Fecha de venta</th>
+                  <th>Nombre comprador</th>
+                  <th>Número de transacción</th>
+                  <th>Precio</th>
+                  <th>Todos los detalles</th>
                 </thead>
                 <tbody>
                   <?php
@@ -67,7 +67,7 @@
                             <td>".date('M d, Y', strtotime($row['sales_date']))."</td>
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
                             <td>".$row['pay_id']."</td>
-                            <td>&#36; ".number_format($total, 2)."</td>
+                            <td>&#81; ".number_format($total, 2)."</td>
                             <td><button type='button' class='btn btn-info btn-sm btn-flat transact' data-id='".$row['salesid']."'><i class='fa fa-search'></i> Ver</button></td>
                           </tr>
                         ";

@@ -1,13 +1,13 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="#" class="logo">
+  <a href="#" class="logo" style="background-color: #072a3d;">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>S</b>CS</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Tienda</b>Online</span>
+    <span class="logo-lg"><b>SPORTS</b>S.A.</span>
   </a>
   <!-- Barra de navegación de encabezado: el estilo se puede encontrar en header.less -->
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-static-top" style="background-color: #072a3d;">
     <!-- Botón de alternancia de la barra lateral-->
     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
       <span class="sr-only">Navegación de palanca</span>
