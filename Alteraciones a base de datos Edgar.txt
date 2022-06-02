@@ -1,0 +1,2 @@
+alter table users add nit varchar(15) after lastname;
+alter table users add tipocliente varchar(50) after address;
