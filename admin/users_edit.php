@@ -12,6 +12,21 @@
 		$NIT = $_POST['NIT'];
 		$tipo= $_POST['tipo'];
 		$rol= $_POST['rol'];
+		$rolNumero;
+
+		if($rol=="Administrador"||$rol=="administrador")
+		{
+		 $rolNumero=1;
+		}
+		if($rol=="Vendedor"||$rol=="vendedor")
+		{
+		 $rolNumero=2;
+		}
+		if($rol=="Cliente"||$rol=="cliente")
+		{
+		 $rolNumero=0;
+		}
+	
 		
 
 		$conn = $pdo->open();
@@ -28,7 +43,7 @@
 
 		try{
 			$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, address=:address, nit=:nit, tipocliente=:tipo, type=:rol WHERE id=:id");
-			$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'address'=>$address, 'nit'=>$NIT, 'tipo'=>$tipo,'rol'=>$rol,  'id'=>$id]);
+			$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'address'=>$address, 'nit'=>$NIT, 'tipo'=>$tipo,'rol'=>$rolNumero,  'id'=>$id]);
 			
 			$_SESSION['Éxito'] = 'Datos de cliente actualizados con éxito';
 
@@ -44,6 +59,6 @@
 		$_SESSION['error'] = 'Rellene el formulario de edición de datos de cliente primero';
 	}
 
-	header('location: Customers.php');
+	header('location: users.php');
 
 ?>

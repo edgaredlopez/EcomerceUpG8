@@ -4,7 +4,23 @@
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-  <?php include 'includes/menubar.php'; ?>
+  <?php //include 'includes/menubar.php'; ?> 
+
+ 
+
+
+<?php
+    if(isset($_SESSION['admin'])=='admin')
+    {
+		  include 'includes/menubar.php';
+	  }
+	  if(isset($_SESSION['vendedor']))
+	  {
+		  include 'includes/menubarVendedor.php';
+	  }
+?>
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -69,7 +85,7 @@
                     try
                     {
                       $stmt = $conn->prepare("SELECT * FROM users WHERE type=:type");
-                      $stmt->execute(['type'=>2]); //0 es admnistrador y 1 es vendodor y 2 es
+                      $stmt->execute(['type'=>0]); //1 es admnistrador y 2 es vendodor y 0 es clientes
 
                       foreach($stmt as $row)
                       {

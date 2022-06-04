@@ -4,7 +4,22 @@
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-  <?php include 'includes/menubar.php'; ?>
+<?php //include 'includes/menubar.php'; ?> 
+
+<?php
+    if(isset($_SESSION['admin'])=='admin')
+    {
+		  include 'includes/menubar.php';
+	  }
+	  if(isset($_SESSION['vendedor']))
+	  {
+		  include 'includes/menubarVendedor.php';
+	  }
+?>
+
+
+
+  
  <!-- Contenedor de contenido. Contiene contenido de la página -->
   <div class="content-wrapper">
     <!-- Encabezado de contenido (encabezado de página) -->

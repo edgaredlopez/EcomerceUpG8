@@ -69,7 +69,7 @@
             </span>
           </a>
         <ul class="treeview-menu">
-          <li><a  class="a" href="users.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+          <!-- <li><a  class="a" href="users.php"><i class="fa fa-circle-o"></i> Usuarios</a></li> -->
           <li><a class="a" href="Customers.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
         </ul>
 
@@ -115,7 +115,7 @@
         </a>
         <ul class="treeview-menu">
       <li><a  class="a" href="#"><i class="fa fa-circle-o"></i> <span>Ventas</span></a></li>
-      <li><a  class="a" href="#"><i class="fa fa-circle-o"></i> <span>Clientes</span></a></li>
+      <!-- <li><a  class="a" href="#"><i class="fa fa-circle-o"></i> <span>Clientes</span></a></li> -->
       </ul>
 
       <!-- <li class="header">SOLICITAR</li>

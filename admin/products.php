@@ -12,7 +12,24 @@
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-  <?php include 'includes/menubar.php'; ?>
+  <?php //include 'includes/menubar.php'; ?> 
+
+ 
+
+
+<?php
+    if(isset($_SESSION['admin'])=='admin')
+    {
+		  include 'includes/menubar.php';
+	  }
+	  if(isset($_SESSION['vendedor']))
+	  {
+		  include 'includes/menubarVendedor.php';
+	  }
+?>
+
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

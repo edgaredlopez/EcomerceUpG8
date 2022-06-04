@@ -85,12 +85,26 @@
 
                     try{
                       $stmt = $conn->prepare("SELECT * FROM users WHERE type=:type or type=:type2");
-                      $stmt->execute(['type'=>0, 'type2'=>1]);
-                      foreach($stmt as $row){
+                      $stmt->execute(['type'=>1, 'type2'=>2]);
+
+                      foreach($stmt as $row)
+                      {
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
                         $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">not verified</span>';
                         $active = (!$row['status']) ? '<span class="pull-right"><a href="#activate" class="status" data-toggle="modal" data-id="'.$row['id'].'"><i class="fa fa-check-square-o"></i></a></span>' : '';
                                               $status = ($row['status']) ? '<span class="label label-success">activo</span>' : '<span class="label label-danger">No Activo</span>';
+
+                        $roltemporal = ($row['type']);
+                        $nombrerolTemporal;
+                        if($roltemporal==1)
+                        {
+                          $nombrerolTemporal="Administrador";
+                        }
+                        if($roltemporal==2)
+                        {
+                          $nombrerolTemporal="Vendedor";
+                        }
+                      
 
                         echo "
                           <tr>
@@ -106,7 +120,13 @@
                             
                             </td>
                             <td>".date('M d, Y', strtotime($row['created_on']))."</td>
-                            <td>".$row['email']."</td>
+                            <td>$nombrerolTemporal</td>
+                            
+
+                           
+                            
+		                        
+
                             <td>
                               <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Carro</a>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
@@ -183,7 +203,26 @@ function getRow(id){
       $('#edit_lastname').val(response.lastname);
       $('#edit_address').val(response.address);
       $('#edit_contact').val(response.contact_info);
-      $('#edit_rol').val(response.type);
+
+      // $('#edit_rol').val(response.type);
+
+  
+      if(response.type==1)
+      {
+        $('#edit_rol').val("Administrador");
+	    }
+      if(response.type==2)
+	    {
+        $('#edit_rol').val("Vendedor");
+	    }
+      if(response.type==0)
+	    {
+        $('#edit_rol').val("Vendedor");
+	    }
+ 
+
+
+
 
       $('.fullname').html(response.firstname+' '+response.lastname);
  
