@@ -74,6 +74,18 @@
 	        			<div class="box-header with-border">
 	        				<h4 class="box-title"><i class="fa fa-calendar"></i> <b>Historial de transacciones</b></h4>
 	        			</div>
+
+						<form method="POST" class="form-inline" action="sales_print.php">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right col-sm-8" id="reservation" name="date_range">
+                  </div>
+                  <button type="submit" class="btn btn-success btn-sm btn-flat" name="print"><span class="glyphicon glyphicon-print"></span> Imprimir</button>
+                </form>
+				
+
 	        			<div class="box-body">
 	        				<table class="table table-bordered" id="example1">
 	        					<thead>

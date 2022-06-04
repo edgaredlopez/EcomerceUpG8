@@ -1,0 +1,63 @@
+.section-payments-container {
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+}
+
+.title-section-payment {
+    text-align: center;
+}
+
+.left-dates {
+    width: 40%;
+    height: 100%;
+    /* background-color: rgb(49, 172, 203); */
+    padding: 10px;
+    align-self: flex-start;
+}
+
+.title-left-dates {
+    text-align: center;
+    background-color: #121f3d;
+    color: #ffffff;
+}
+
+.credit-or-debit-container {
+    width: 60%;
+    height: 100%;
+    align-self: flex-end;
+    padding: 10px;
+}
+
+.img-credit-debit-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.title-credit-or-debit-container {
+    background-color: #121f3d;
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.img-credit-debit {
+    width: 500px;
+    height: 300px;
+}
+
+.title-transfer-or-deposit {
+    background-color: #121f3d;
+    color: #ffffff;
+    width: 60%;
+    padding-left: 5px;
+}
+
+.relleno {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-padding {
+    padding-bottom: 10px;
+}

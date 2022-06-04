@@ -79,7 +79,7 @@
                         echo "
                           <tr>
                             <td class='hidden'></td>
-                            <td>".date('M d, Y', strtotime($row['sales_date']))."</td>
+                            <td>".date('yyyy-mm-dd', strtotime($row['sales_date']))."</td>
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
                             <td>".$row['pay_id']."</td>
                             <td>&#81; ".number_format($total, 2)."</td>
@@ -147,7 +147,7 @@ $(function(){
       endDate  : moment()
     },
     function (start, end) {
-      $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+      $('#daterange-btn span').html(start.format('dd-mm-YY') + ' - ' + end.format('dd-mm-YY'))
     }
   )
   

@@ -18,7 +18,7 @@
 			$total += $amount;
 			$contents .= '
 			<tr>
-				<td>'.date('M d, Y', strtotime($row['sales_date'])).'</td>
+				<td>'.date('d M, Y', strtotime($row['sales_date'])).'</td>
 				<td>'.$row['firstname'].' '.$row['lastname'].'</td>
 				<td>'.$row['pay_id'].'</td>
 				<td align="right">&#36; '.number_format($amount, 2).'</td>
@@ -39,8 +39,8 @@
 		$ex = explode(' - ', $_POST['date_range']);
 		$from = date('Y-m-d', strtotime($ex[0]));
 		$to = date('Y-m-d', strtotime($ex[1]));
-		$from_title = date('M d, Y', strtotime($ex[0]));
-		$to_title = date('M d, Y', strtotime($ex[1]));
+		$from_title = date('d M, Y', strtotime($ex[0]));
+		$to_title = date('d M, Y', strtotime($ex[1]));
 
 		$conn = $pdo->open();
 
