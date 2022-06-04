@@ -11,16 +11,32 @@
 
 			$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE email = :email");
 			$stmt->execute(['email'=>$email]);
+
 			$row = $stmt->fetch();
+
 			if($row['numrows'] > 0){
-				if($row['status']){
-					if(password_verify($password, $row['password'])){
-						if($row['type']){
+				
+				if($row['status'])
+				{
+
+					if(password_verify($password, $row['password']))
+					{
+						if($row['type'])
+						{ ///ADMINISTRADOR
 							$_SESSION['admin'] = $row['id'];
 						}
-						else{
+
+						if($row['type']==2)
+						{ ///Vendedor
+							$_SESSION['vendedor'] = $row['id'];
+						}
+
+						else ///CLIENTE
+						{
+							
 							$_SESSION['user'] = $row['id'];
 						}
+
 					}
 					else{
 						$_SESSION['error'] = 'Contraseña incorrecta';

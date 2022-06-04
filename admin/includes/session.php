@@ -7,6 +7,8 @@
 		exit();
 	}
 
+	
+
 	$conn = $pdo->open();
 
 	$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");

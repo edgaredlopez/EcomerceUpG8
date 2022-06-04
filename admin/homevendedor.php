@@ -2,7 +2,6 @@
   include 'includes/session.php';
   include 'includes/format.php'; 
 ?>
-
 <?php 
   $today = date('Y-m-d');
   $year = date('Y');
@@ -12,27 +11,22 @@
 
   $conn = $pdo->open();
 ?>
-
-
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-
-
-
-  <?php include 'includes/menubar.php'; ?>
+  <?php include 'includes/menubarVendedor.php'; ?>
 
   <!-- Envoltorio de contenido. Contiene contenido de la página -->
   <div class="content-wrapper">
     <!-- Encabezado de contenido (encabezado de página) -->
     <section class="content-header">
       <h1>
-        Escritorio
+        Escritorio Vendedor
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="home.php"><i class="fa fa-dashboard"></i> Casa</a></li>
         <li class="active">Tablero</li>
       </ol>
     </section>

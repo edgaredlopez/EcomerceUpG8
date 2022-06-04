@@ -5,10 +5,12 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Añadir nuevo usuario</b></h4>
+              <h4 class="modal-title"><b>Añadir nuevo cliente</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="users_add.php" enctype="multipart/form-data">
+              <form class="form-horizontal" method="POST" action="customer_add.php" enctype="multipart/form-data">
+               
+              
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Correo electrónico</label>
 
@@ -38,17 +40,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="col-sm-3 control-label">Direcciòn</label>
+                    <label for="direccion" class="col-sm-3 control-label">Direcciòn</label>
 
                     <div class="col-sm-9">
-                      <textarea class="form-control" id="address" name="address"></textarea>
+                      <textarea class="form-control" id="direccion" name="direccion"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Informaciòn del Contacto</label>
+                    <label for="NIT" class="col-sm-3 control-label">NIT</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="contact" name="contact">
+                      <input type="text" class="form-control" id="NIT" name="NIT">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tipocliente" class="col-sm-3 control-label">Tipo de cliente</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="tipocliente" name="tipocliente">
                     </div>
                 </div>
                 <div class="form-group">
@@ -75,10 +83,10 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>editar usuario</b></h4>
+              <h4 class="modal-title"><b>Editar cliente</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="users_edit.php">
+              <form class="form-horizontal" method="POST" action="customer_edit.php">
                 <input type="hidden" class="userid" name="id">
                 <div class="form-group">
                     <label for="edit_email" class="col-sm-3 control-label">Correo electrónico</label>
@@ -114,15 +122,23 @@
                     <div class="col-sm-9">
                       <textarea class="form-control" id="edit_address" name="address"></textarea>
                     </div>
-                </div>  
+                </div>
                 <div class="form-group">
-                    <label for="edit_rol" class="col-sm-3 control-label">ROL</label>
+                    <label for="edit_nit" class="col-sm-3 control-label">NIT</label>
+
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_rol" name="rol">
+                      <input type="text" class="form-control" id="edit_nit" name="NIT">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit_tipocliente" class="col-sm-3 control-label">Tipo de cliente</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_tipocliente" name="tipocliente">
                     </div>
                 </div>
                
-            </div>
+            
+              </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
               <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
@@ -131,6 +147,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Delete -->
 <div class="modal fade" id="delete">
@@ -142,7 +159,7 @@
               <h4 class="modal-title"><b>Eliminando...</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="users_delete.php">
+              <form class="form-horizontal" method="POST" action="customer_delete.php">
                 <input type="hidden" class="userid" name="id">
                 <div class="text-center">
                     <p>BORRAR USUARIO</p>
@@ -168,7 +185,7 @@
               <h4 class="modal-title"><b><span class="fullname"></span></b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="users_photo.php" enctype="multipart/form-data">
+              <form class="form-horizontal" method="POST" action="customer_photo.php" enctype="multipart/form-data">
                 <input type="hidden" class="userid" name="id">
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Foto</label>

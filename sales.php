@@ -1,8 +1,9 @@
 <?php
 	include 'includes/session.php';
 
-	if(isset($_GET['pay'])){
-		$payid = $_GET['pay'];
+	
+		//$payid = $_GET['pay'];
+		$payid = "asdfasdfasdasdfaaaa";
 		$date = date('Y-m-d');
 
 		$conn = $pdo->open();
@@ -38,8 +39,7 @@
 		}
 
 		$pdo->close();
-	}
-	
+		
 	header('location: profile.php');
 	
 ?>

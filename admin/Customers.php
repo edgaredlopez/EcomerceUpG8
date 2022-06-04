@@ -4,37 +4,18 @@
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-  <?php //include 'includes/menubar.php'; ?> 
-
- 
-
-
-<?php
-    if(isset($_SESSION['admin'])=='admin')
-    {
-		  include 'includes/menubar.php';
-	  }
-	  if(isset($_SESSION['vendedor']))
-	  {
-		  include 'includes/menubarVendedor.php';
-	  }
-?>
-
-
-
-
-
+  <?php include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Administradores y vendedores registrados
+        Clientes Ingresados
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Usuarios</li>
+        <li class="active">Clientes</li>
       </ol>
     </section>
 
@@ -66,33 +47,39 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Crear nuevo usuario</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Crear nuevo cliente</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Foto del usuario</th>
+                  <th>Foto del cliente</th>
                   <th>Correo electrónico</th>
-                  <th>Nombre de usuario</th>
-                  <th>Estado del usuario</th>
+                  <th>Nombre de cliente</th>
+                  <th>Estado del cliente</th>
                   <th>Fecha Agregado/a</th>
-                  <th>Rol</th>
+                  <th>Dirección</th>
+                  <th>NIT</th>
+                  <th>Tipo de cliente</th>
                   <th>Funciones</th>
                 </thead>
                 <tbody>
                   <?php
                     $conn = $pdo->open();
 
-                    try{
-                      $stmt = $conn->prepare("SELECT * FROM users WHERE type=:type or type=:type2");
-                      $stmt->execute(['type'=>0, 'type2'=>1]);
-                      foreach($stmt as $row){
+                    try
+                    {
+                      $stmt = $conn->prepare("SELECT * FROM users WHERE type=:type");
+                      $stmt->execute(['type'=>2]); //0 es admnistrador y 1 es vendodor y 2 es
+
+                      foreach($stmt as $row)
+                      {
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+
                         $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">not verified</span>';
                         $active = (!$row['status']) ? '<span class="pull-right"><a href="#activate" class="status" data-toggle="modal" data-id="'.$row['id'].'"><i class="fa fa-check-square-o"></i></a></span>' : '';
-                                              $status = ($row['status']) ? '<span class="label label-success">activo</span>' : '<span class="label label-danger">No Activo</span>';
-
-                        echo "
+                        $status = ($row['status']) ? '<span class="label label-success">activo</span>' : '<span class="label label-danger">No Activo</span>';
+                        echo 
+                        "
                           <tr>
                             <td>
                               <img src='".$image."' height='30px' width='30px'>
@@ -102,13 +89,15 @@
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
                             <td>
                               ".$status."
-                              ".$active."
-                            
+                              ".$active."                        
                             </td>
                             <td>".date('M d, Y', strtotime($row['created_on']))."</td>
-                            <td>".$row['email']."</td>
+                            <td>".$row['address']."</td>
+                            <td>".$row['nit']."</td>
+                            <td>".$row['tipocliente']."</td>
+                            
                             <td>
-                              <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Carro</a>
+                              <a href='cart.php?user=".$row['id']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Ver carrito</a>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
                             </td>
@@ -132,16 +121,22 @@
      
   </div>
   	<?php include 'includes/footer.php'; ?>
-    <?php include 'includes/users_modal.php'; ?>
+    <?php include 'includes/customer_modal.php'; ?>
 
 </div>
 <!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
+
+
+
+
+
 <script>
 $(function(){
 
-  $(document).on('click', '.edit', function(e){
+  $(document).on('click', '.edit', function(e)
+  {
     e.preventDefault();
     $('#edit').modal('show');
     var id = $(this).data('id');
@@ -172,23 +167,21 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'users_row.php',
+    url: 'customers_row.php',
     data: {id:id},
     dataType: 'json',
-    success: function(response){
+    success: function(response)
+    {
       $('.userid').val(response.id);
       $('#edit_email').val(response.email);
       $('#edit_password').val(response.password);
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
       $('#edit_address').val(response.address);
-      $('#edit_contact').val(response.contact_info);
-      $('#edit_rol').val(response.type);
-
+      $('#edit_nit').val(response.nit);
+      $('#edit_tipocliente').val(response.tipocliente);
+     
       $('.fullname').html(response.firstname+' '+response.lastname);
- 
-
-      
     }
   });
 }

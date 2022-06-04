@@ -7,10 +7,11 @@
 	if(isset($_POST['signup'])){
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
+		$email = $_POST['email'];
 		$NIT = $_POST['NIT'];
 		$direccion= $_POST['direccion'];
 		$tipocliente= $_POST['tipocliente'];
-		$email = $_POST['email'];
+		
 		$password = $_POST['password'];
 		$repassword = $_POST['repassword'];
 		$statusedgar= "1";
@@ -35,7 +36,8 @@
 			$stmt = $conn->prepare("SELECT COUNT(*) AS numrows FROM users WHERE email=:email");
 			$stmt->execute(['email'=>$email]);
 			$row = $stmt->fetch();
-			if($row['numrows'] > 0){
+			if($row['numrows'] > 0)
+			{
 				$_SESSION['error'] = 'Correo electrónico ya registrado anteriormente';
 				header('location: signup.php');
 			}
@@ -60,6 +62,7 @@
 													   VALUES (:firstname,:lastname,:nit, :address,:tipocliente,:email, :password,:tipousuario, :status, :code, :now)");
 					
 					$stmt->execute(['firstname'=>$firstname, 'lastname'=>$lastname, 'nit'=>$NIT, 'address'=>$direccion, 'tipocliente'=>$tipocliente, 'email'=>$email, 'password'=>$password,'tipousuario'=>$tipousuario, 'status'=>$statusedgar, 'code'=>$code, 'now'=>$now]);
+					
 					$userid = $conn->lastInsertId();
 
 					$message = "

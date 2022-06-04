@@ -2,7 +2,6 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['edit'])){
-		
 		$id = $_POST['id'];
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
@@ -10,10 +9,8 @@
 		$password = $_POST['password'];
 		$address = $_POST['address'];
 		$NIT = $_POST['NIT'];
-		$tipo= $_POST['tipo'];
-		$rol= $_POST['rol'];
-		
-
+		$tipo= $_POST['tipocliente'];
+	
 		$conn = $pdo->open();
 		$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
 		$stmt->execute(['id'=>$id]);
@@ -27,8 +24,8 @@
 		}
 
 		try{
-			$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, address=:address, nit=:nit, tipocliente=:tipo, type=:rol WHERE id=:id");
-			$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'address'=>$address, 'nit'=>$NIT, 'tipo'=>$tipo,'rol'=>$rol,  'id'=>$id]);
+			$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, address=:address, nit=:nit, tipocliente=:tipo WHERE id=:id");
+			$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'address'=>$address, 'nit'=>$NIT, 'tipo'=>$tipo,'id'=>$id]);
 			
 			$_SESSION['Éxito'] = 'Datos de cliente actualizados con éxito';
 

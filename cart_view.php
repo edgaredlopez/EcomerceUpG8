@@ -4,7 +4,7 @@
 <div class="wrapper">
 
 	<?php include 'includes/navbar.php'; ?>
-	 
+
 	  <div class="content-wrapper">
 	    <div class="container">
 
@@ -29,6 +29,7 @@
 		        		</table>
 	        			</div>
 	        		</div>
+
 	        		<?php
 	        			if(isset($_SESSION['user'])){
 	        				echo "
@@ -37,25 +38,28 @@
 	        			}
 	        			else{
 	        				echo "
-	        					<h4>Necesitas <a href='login.php'>Iniciar sesión</a> para revisar.</h4>
+	        					<h4>Necesitas <a href='login.php'>Iniciar sesión</a> para poder generar la compra.</h4>
 	        				";
 	        			}
 	        		?>
 	        	</div>
 	        	<div class="col-sm-3">
-	        		<?php 
+	        		<?php
 					//include 'includes/sidebar.php';
 					 ?>
 	        	</div>
 	        </div>
 	      </section>
-	     
+
 	    </div>
 	  </div>
   	<?php $pdo->close(); ?>
   	<?php include 'includes/footer.php'; ?>
 </div>
 
+
+
+<!-- Eliminar productos de la fila de tabnla carrito de compras -->
 <?php include 'includes/scripts.php'; ?>
 <script>
 var total = 0;
@@ -78,6 +82,8 @@ $(function(){
 		});
 	});
 
+
+	// Para reducir la cantidad de un producto en el carrito de compras
 	$(document).on('click', '.minus', function(e){
 		e.preventDefault();
 		var id = $(this).data('id');
@@ -103,6 +109,9 @@ $(function(){
 			}
 		});
 	});
+
+	
+	// Para aumentar la canitdad de un pruducto en la tabla de carrito de compras
 
 	$(document).on('click', '.add', function(e){
 		e.preventDefault();
@@ -156,9 +165,19 @@ function getTotal(){
 	});
 }
 </script>
+
+
+
+
+
+
+
+
 <!-- Paypal Express -->
 <script>
-paypal.Button.render({
+paypal.Button.render
+(
+{
     env: 'sandbox', // change for production if app is live,
 
 	client: {
@@ -179,9 +198,9 @@ paypal.Button.render({
                 transactions: [
                     {
                     	//total purchase
-                        amount: { 
-                        	total: total, 
-                        	currency: 'USD' 
+                        amount: {
+                        	total: total,
+                        	currency: 'USD'
                         }
                     }
                 ]
@@ -189,13 +208,15 @@ paypal.Button.render({
         });
     },
 
-    onAuthorize: function(data, actions) {
-        return actions.payment.execute().then(function(payment) {
+    onAuthorize: function(data, actions) 
+	{
+        return actions.payment.execute().then(function(payment) 
+		{
 			window.location = 'sales.php?pay='+payment.id;
         });
     },
 
-}, '#paypal-button');
+},'#paypal-button');
 </script>
 </body>
 </html>

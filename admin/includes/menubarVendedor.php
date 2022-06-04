@@ -16,13 +16,15 @@
 
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree" style="background-color: ;">
-     <!-- MENU PRINCIPAL -->
-    <li class="header">APARTADO PRINCIPAL</li>
+    
+    <!-- MENU PRINCIPAL -->
+
+    <!-- <li class="header">APARTADO PRINCIPAL</li>
       <li><a href="home.php">
-        <!-- <i class="fa fa-dashboard"></i>  -->
       <span>Escritorio principal</span>
       </a>
-    </li>
+    </li> -->
+
       <li class="treeview middle">
       <li class="header">TODOS LOS INFORMES</li>    
       <li class="treeview middle">
@@ -37,9 +39,10 @@
       <li><a class="a" href="sales.php"  style="background-color: #051e2b;"><i class="fa fa-circle-o"></i> <span>Ventas</span></a></li>
       </ul>
       <!-- separar -->
-      <li class="treeview">
-        <a href="#">       
-      <!-- <i class="fa fa-universal-access"></i> -->
+
+
+      <!-- <li class="treeview">
+        <a href="#">     
           <span>Consultar las compras</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -48,7 +51,9 @@
         
         <ul class="treeview-menu">
       <li><a class="a" href="sales.php"><i class="fa fa-circle-o"></i> <span>Consultar compras por fechas</span></a></li>
-      </ul>
+      </ul> -->
+
+
       <!-- separar -->
       
 
@@ -86,9 +91,9 @@
           <li><a  class="a" href="category.php"><i class="fa fa-circle-o"></i> Categoría</a></li>
         </ul>
          <!-- separar -->
-        <li class="treeview">
+
+        <!-- <li class="treeview">
         <a href="#">       
-      <!-- <i class="fa fa-shopping-cart"></i> -->
           <span>Compras</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -97,7 +102,9 @@
         <ul class="treeview-menu">
         <li><a  class="a" href="#"><i class="fa fa-circle-o"></i> Ingresos</a></li>
         <li><a  class="a" href="#"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-      </ul>
+      </ul> -->
+
+
       <li class="treeview">
         <a href="#">       
       <!-- <i class="fa fa-shopping-bag"></i> -->
