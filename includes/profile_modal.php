@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Datos de contacto</label>
+                    <label for="contact" class="col-sm-3 control-label">Telefono</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="contact" name="contact" value="<?php echo $user['contact_info']; ?>">
@@ -85,6 +85,13 @@
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="address" name="address"><?php echo $user['address']; ?></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nit" class="col-sm-3 control-label">NIT</label>
+
+                    <div class="col-sm-9">
+                      <textarea class="form-control" id="nit" name="address"><?php echo $user['nit']; ?></textarea>
                     </div>
                 </div>
                 <div class="form-group">

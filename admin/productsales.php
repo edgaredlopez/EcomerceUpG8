@@ -3,7 +3,7 @@
   $where = '';
   if(isset($_GET['category'])){
     $catid = $_GET['category'];
-    $where = 'WHERE category_id ='.$catid;
+    $where = 'ORDER BY quantity ASC'.$catid;
   }
 
 ?>
@@ -19,12 +19,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de productos
+        Productos vendidos
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home.php"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="home.php"><i class="fa fa-dashboard"></i>Inicio</a></li>
         <li>Productos</li>
-        <li class="active">Lista de productos</li>
+        <li class="active">Productos vendidos</li>
       </ol>
     </section>
 
@@ -56,11 +56,10 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> Nuevo</a>
               <div class="pull-right">
                 <form class="form-inline">
                   <div class="form-group">
-                    <label>Categoria: </label>
+                    <label>Filtrar: </label>
                     <select class="form-control input-sm" id="select_category">
                       <option value="0">Todos</option>
                       <?php
@@ -89,8 +88,8 @@
                   <th>Nombre</th>
                   <th>Foto</th>
                   <th>Descripción</th>
-                  <th>Precio</th>
-                  <th>Ventas hoy</th>
+                  <th>Monto Total</th>
+                  <th>Cantidad</th>
                   <th>Existencias</th>
                   <th>Codigo de producto</th>
                 </thead>
@@ -100,7 +99,7 @@
 
                     try{
                       $now = date('Y-m-d');
-                      $stmt = $conn->prepare("SELECT * FROM products $where");
+                      $stmt = $conn->prepare("SELECT products.id,category_id,name,description,slug,sum(price),photo,date_view,counter,stock,codprod,sum(quantity) FROM products INNER JOIN details ON products.id=details.product_id where products.id = details.product_id group by products.id");
                       $stmt->execute();
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/noimage.jpg';
@@ -113,15 +112,12 @@
                               <span class='pull-right'><a href='#edit_photo' class='photo' data-toggle='modal' data-id='".$row['id']."'><i class='fa fa-edit'></i></a></span>
                             </td>
                             <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> Ver</a></td>
-                            <td>Q. ".number_format($row['price']*7.75, 2)."</td>
-                            <td>".$counter."</td>
+                            <td>Q. ".number_format($row['sum(price)']*7.75, 2)."</td>
+                            <td>".($row['sum(quantity)'])."</td>
                             <td>".($row['stock'])."</td>
                             <td>".($row['codprod'])."</td>
 
-                            <td>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
-                            </td>
+                            
                           </tr>
                         ";
                       }

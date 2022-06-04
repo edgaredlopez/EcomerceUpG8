@@ -45,10 +45,12 @@
 	        					<div class="row">
 	        						<div class="col-sm-3">
 	        							<h4>Nombre:</h4>
-	        							<h4>Correo electrónico:</h4>
-	        							<h4> Información de contacto: </h4>
+	        							<h4>Correo :</h4>
+	        							<h4> Telefono: </h4>
 	        							<h4>Dirección:</h4>
 	        							<h4>Miembro desde:</h4>
+										<h4>NIT:</h4>
+										<h4>TIpo de cliente:</h4>
 	        						</div>
 	        						<div class="col-sm-9">
 	        							<h4><?php echo $user['firstname'].' '.$user['lastname']; ?>
@@ -57,9 +59,12 @@
 	        								</span>
 	        							</h4>
 	        							<h4><?php echo $user['email']; ?></h4>
+
 	        							<h4><?php echo (!empty($user['contact_info'])) ? $user['contact_info'] : 'N/a'; ?></h4>
 	        							<h4><?php echo (!empty($user['address'])) ? $user['address'] : 'N/a'; ?></h4>
 	        							<h4><?php echo date('M d, Y', strtotime($user['created_on'])); ?></h4>
+										<h4><?php echo  $user['nit']; ?></h4>
+										<h4><?php echo  $user['tipocliente']; ?></h4>
 	        						</div>
 	        					</div>
 	        				</div>

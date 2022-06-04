@@ -9,6 +9,8 @@
 		$price = $_POST['price'];
 		$description = $_POST['description'];
 		$filename = $_FILES['photo']['name'];
+		$stock = $_POST['stock'];
+		$codprod = $_POST['codprod'];
 
 		$conn = $pdo->open();
 
@@ -30,8 +32,8 @@
 			}
 
 			try{
-				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo) VALUES (:category, :name, :description, :slug, :price, :photo)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename]);
+				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo, stock, codprod) VALUES (:category, :name, :description, :slug, :price, :photo, :stock, :codprod)");
+				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename, 'stock'=>$stock, 'codprod'=>$codprod]);
 				$_SESSION['success'] = 'Usuario agregado exitosamente';
 
 			}

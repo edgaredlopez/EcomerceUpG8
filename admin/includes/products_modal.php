@@ -56,6 +56,20 @@
                     <input type="file" id="photo" name="photo">
                   </div>
                 </div>
+                <div class="form-group">
+                <label for="edit_price" class="col-sm-1 control-label">Existencias</label>
+
+                  <div class="col-sm-5">
+                    <input type="number" class="form-control" id="add_stock" name="stock">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="edit_codprod" class="col-sm-4 control-label">Código de producto</label>
+                  <div class="col-sm-5">
+                    
+                    <input type="text" class="form-control" id="add_cod" name="codprod">
+                  </div>
+                </div>
                 <p><b>Descripción</b></p>
                 <div class="form-group">
                   <div class="col-sm-12">

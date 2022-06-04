@@ -20,6 +20,17 @@
     <link rel="stylesheet" href="magnify/magnify.min.css">
 
 
+    <link rel="stylesheet" href="./PruebaEstilos.css">
+  <link rel="stylesheet" href="./styles-test.css">
+  <link rel="stylesheet" href="./styles-form-payment.css">
+
+
+ <!-- Paypal Express -->
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  
+
+  
+
     <link rel="stylesheet" href="./PruebaEstilos.css"
 
 
@@ -31,6 +42,7 @@
 
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     
+
   	<!-- CSS personalizado -->
     <style type="text/css">
     /* Pequeños dispositivos (tablets, 768px y arriba) */

@@ -34,8 +34,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-      <li><a class="a" href="sales.php"  style="background-color: #051e2b;"><i class="fa fa-circle-o"></i> <span>Ventas</span></a></li>
-      </ul>
+        <li><a href="sales.php"><i class="fa fa-circle-o"></i> <span>Ventas por usuario</span></a></li>
+      <li><a href="productsales.php"><i class="fa fa-circle-o"></i> <span>Productos vendidos</span></a></li>
+            </ul>
       <!-- separar -->
       <li class="treeview">
         <a href="#">       

@@ -11,6 +11,7 @@
 		$lastname = $_POST['lastname'];
 		$contact = $_POST['contact'];
 		$address = $_POST['address'];
+		$nit = $_POST['nit'];
 		$photo = $_FILES['photo']['name'];
 		if(password_verify($curr_password, $user['password'])){
 			if(!empty($photo)){
@@ -29,8 +30,8 @@
 			}
 
 			try{
-				$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, contact_info=:contact, address=:address, photo=:photo WHERE id=:id");
-				$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'contact'=>$contact, 'address'=>$address, 'photo'=>$filename, 'id'=>$user['id']]);
+				$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, firstname=:firstname, lastname=:lastname, contact_info=:contact, address=:address, nit=:nit ,photo=:photo WHERE id=:id");
+				$stmt->execute(['email'=>$email, 'password'=>$password, 'firstname'=>$firstname, 'lastname'=>$lastname, 'contact'=>$contact, 'address'=>$address,'nit'=>$nit, 'photo'=>$filename, 'id'=>$user['id']]);
 
 				$_SESSION['success'] = 'Cuenta actualizada con éxito';
 			}

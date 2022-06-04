@@ -57,6 +57,18 @@
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="edit_price" name="price">
                   </div>
+                  <label for="edit_price" class="col-sm-1 control-label">Existencias</label>
+
+                  <div class="col-sm-5">
+                    <input type="number" class="form-control" id="edit_stock" name="stock">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="edit_codprod" class="col-sm-4 control-label">Código de producto</label>
+                  <div class="col-sm-5">
+                    
+                    <input type="text" class="form-control" id="edit_cod" name="codprod">
+                  </div>
                 </div>
                 <p><b>Descripción</b></p>
                 <div class="form-group">
@@ -67,7 +79,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i>Cerrar</button>
               <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
               </form>
             </div>
