@@ -85,7 +85,7 @@
             <div class="icon">
               <!-- <i class="fa fa-shopping-cart"></i> -->
             </div>
-            <a href="#" class="small-box-footer">Ver todo <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./productsales.php" class="small-box-footer">Ver todo <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -163,7 +163,7 @@
         <!-- ./col -->
       </div>
       <!-- /.row -->
-      <!-- <div class="row">
+      <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
@@ -195,7 +195,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       </section>
       <!-- columna derecha -->

@@ -1,55 +1,67 @@
-<?php include 'includes/session.php'; ?>
-<?php include 'includes/header.php'; ?>
+	<?php include 'includes/session.php'; ?>
+	<?php include 'includes/header.php'; ?>
 
-<body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
+	<body class="hold-transition skin-blue layout-top-nav">
+	<div class="wrapper">
 
-	<?php include 'includes/navbar.php'; ?>
-	 
-	  <div class="content-wrapper">
-	    <div class="container">
+		<?php include 'includes/navbar.php'; ?>
+		
+		<div class="content-wrapper">
+			<div class="container">
 
-	      <!-- Main content -->
-	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
-	        		<h1 class="page-header">Su carro</h1>
-	        		<div class="box box-solid">
-	        			<div class="box-body">
-		        		<table class="table table-bordered">
-		        			<thead>
-		        				<th></th>
-		        				<th>Foto</th>
-		        				<th>Nombre</th>
-		        				<th>Precio</th>
-		        				<th width="20%">Cantidad</th>
-		        				<th>Subtotal</th>
-		        			</thead>
-		        			<tbody id="tbody">
-		        			</tbody>
-		        		</table>
-	        			</div>
-	        		</div>
-	        		
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php 
-					include 'includes/sidebar.php';
-					 ?>
-	        	</div>
-	        </div>
+			<!-- Main content -->
+			<section class="content">
+				<div class="row">
+					<div class="col-sm-9">
+						<h1 class="page-header">Su carro</h1>
+						<div class="box box-solid">
+							<div class="box-body">
+							<table class="table table-bordered">
+								<thead>
+									<th></th>
+									<th>Foto</th>
+									<th>Nombre</th>
+									<th>Precio</th>
+									<th width="20%">Cantidad</th>
+									<th>Subtotal</th>
+								</thead>
+								<tbody id="tbody">
+								</tbody>
+							</table>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-sm-3">
+						<?php 
+						include 'includes/sidebar.php';
+						?>
+					</div>
+				</div>
+				
+			</section>
 			
-	      </section>
-	     
-	    </div>
-	  </div>
-	  
-  	
-</div>
+			</div>
+		</div>
+		
+		
+	</div>
 
 <section class="main-section-payments">
     
     <h2 class="title-section-payment">Métodos de pago</h2>
+	<a href="./invoice.php" class="button-container-print" 
+		style="margin-left: 10px; width: 30px;
+   			height: 100px;
+    		text-align: center;
+    		padding: 15px 5px 15px 5px; 
+			border-radius: 10px;
+    		font-size: 1.3em;
+			background-color: #31b3b7;
+			color: #ffffff;
+    		cursor: pointer;" 
+			>Ir a imprimir factura
+	</a>
     <section class="section-payments-container">
 
     <section class="left-dates">
@@ -166,10 +178,9 @@
 						</form>
 						<form action='sales.php' method='GET'
 							<div class='col-xs-4'>
-									<button type='submit' class='btn btn-primary btn-block btn-flat btn-padding' name='login'>Comprar</button>
+									<button type='submit' style='margin-bottom: 10px;' class='btn btn-primary btn-block btn-flat btn-padding btn-margin' name='login'>Comprar</button>
 							</div>
 							</form>
-							<div class='relleno'>.</div>
 						<button id='paypal-button'></button>
 						</section>
 							";

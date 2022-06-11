@@ -4,22 +4,7 @@
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-<?php //include 'includes/menubar.php'; ?> 
-
-<?php
-    if(isset($_SESSION['admin'])=='admin')
-    {
-		  include 'includes/menubar.php';
-	  }
-	  if(isset($_SESSION['vendedor']))
-	  {
-		  include 'includes/menubarVendedor.php';
-	  }
-?>
-
-
-
-  
+  <?php include 'includes/menubar.php'; ?>
  <!-- Contenedor de contenido. Contiene contenido de la página -->
   <div class="content-wrapper">
     <!-- Encabezado de contenido (encabezado de página) -->
@@ -57,7 +42,7 @@
                   <th class="hidden"></th>
                   <th>Fecha de venta</th>
                   <th>Nombre comprador</th>
-                  <th>Número de transacción</th>
+                  <th>Número de factura</th>
                   <th>Precio</th>
                   <th>Todos los detalles</th>
                 </thead>
@@ -79,7 +64,7 @@
                         echo "
                           <tr>
                             <td class='hidden'></td>
-                            <td>".date('yyyy-mm-dd', strtotime($row['sales_date']))."</td>
+                            <td>".date('M d, Y', strtotime($row['sales_date']))."</td>
                             <td>".$row['firstname'].' '.$row['lastname']."</td>
                             <td>".$row['pay_id']."</td>
                             <td>&#81; ".number_format($total, 2)."</td>
@@ -147,7 +132,7 @@ $(function(){
       endDate  : moment()
     },
     function (start, end) {
-      $('#daterange-btn span').html(start.format('dd-mm-YY') + ' - ' + end.format('dd-mm-YY'))
+      $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
     }
   )
   
@@ -180,3 +165,4 @@ $(function(){
 </script>
 </body>
 </html>
+  

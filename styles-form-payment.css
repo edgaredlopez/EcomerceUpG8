@@ -4,6 +4,15 @@
     /* justify-content: space-between; */
 }
 
+.button-container-print {
+    width: 30px;
+    height: 100px;
+    text-align: center;
+    padding: 15px 0 15px 0; 
+    background-color: red;
+    cursor: pointer;
+}
+
 .title-section-payment {
     text-align: center;
 }
@@ -53,11 +62,10 @@
     padding-left: 5px;
 }
 
-.relleno {
-    width: 20px;
-    height: 20px;
-}
 
 .btn-padding {
     padding-bottom: 10px;
 }
+
+
+
