@@ -10,7 +10,7 @@
 		$tipocliente= $_POST['tipocliente'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$tipousuario= 2;
+		$tipousuario= 0;
 		$statusedgar= "1";
 
 

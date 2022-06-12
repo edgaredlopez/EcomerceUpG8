@@ -77,7 +77,7 @@
       <li class="treeview">
         <a href="#">
           <!-- <i class="fa fa-folder"></i> -->
-          <span>Almacen</span>
+          <span>Inventario</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>

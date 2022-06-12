@@ -59,7 +59,7 @@
               <span class="label label-success cart_count"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Tienes <span class="cart_count"></span> articulo(s) en el carrito</li>
+              <li class="header" style="color: White">Tienes  <span class="cart_count"></span> articulo(s) en el carrito</li>
               <li>
                 <ul class="menu" id="cart_menu">
                 </ul>

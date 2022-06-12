@@ -138,7 +138,7 @@
 
 
 						<div class='img-credit-debit-container'>
-							<img class='img-credit-debit' src='./images/tarjeta-credito.jpg' alt='credit o debit'>
+							<img class='img-credit-debit' src='./images/tarjeta-credito.png' alt='credit o debit'>
 						</div>
 
 						<form action='sales.php' method='GET'>

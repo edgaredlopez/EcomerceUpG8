@@ -54,7 +54,7 @@
 
 
 
-				$tipousuario="1";//Administrador 1, cliente 0;
+				$tipousuario="0";//Administrador 1, cliente 0;
 				
 				//Procedemos a insertar los datos del usuario en la base de datos
 				try{
